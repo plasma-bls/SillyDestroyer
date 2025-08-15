@@ -2,20 +2,22 @@ import os
 import sys
 import ctypes
 import pwd
-
-
+import random
+import pystyle
+import platform
+import shutil
+import subprocess
+import time
+from time import sleep
+from pystyle import Write, Colorate, Colors
 def all():
     while True:
         try:
-            import os
             import platform
             if platform.system == "Windows":
                 os.system("cls")
             else: 
-                os.system("clear")
-            import random
-            import pystyle
-            rnumber = random.randint(1, 5)
+                os.system("clear")            rnumber = random.randint(1, 5)
             lnumber = int(input("Silly game! Choose a number between 1 - 5: "))
             import platform
             import shutil
